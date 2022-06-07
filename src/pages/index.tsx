@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { NextPage } from 'next';
 
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -6,9 +6,22 @@ import Section from '../components/Section';
 
 import styles from '../styles/Home.module.css';
 
-// TODO: use contet to build all sections
-// TODO: use i18n
-// TODO: support english and spanish (i18n)
+/**
+ * TODOs:
+ * use content to build all sections
+ * use i18n
+ * support english and spanish (i18n)
+ * make menu
+ * create sections
+ * unit testing
+ * ! mobile first
+ * ? micro FE
+ * ? design system
+ * ? story book
+ * ! API with laravel
+ *
+ */
+
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -20,6 +33,6 @@ const Home: NextPage = () => {
       <Footer />
     </div>
   );
-}
+};
 
 export default Home;
