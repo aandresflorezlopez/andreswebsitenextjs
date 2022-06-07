@@ -14,6 +14,7 @@ import styles from '../styles/Home.module.css';
  * make menu
  * create sections
  * unit testing
+ * ! use SSR and SSG
  * ! mobile first
  * ? micro FE
  * ? design system
