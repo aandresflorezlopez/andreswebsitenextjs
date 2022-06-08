@@ -6,7 +6,11 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
-      'primary': 'Slate',
+      'primary': {
+        50: '#f8fafc',
+        400: '#94a3b8',
+      }
+
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],

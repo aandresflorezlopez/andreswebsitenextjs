@@ -21,7 +21,7 @@ const contentSection: ContentWebsite = {
     data: {},
   },
   myPassions: {
-    title: 'My passion',
+    title: 'My passions',
     description: `Dream to become to...`,
     data: {
       dreams: [
@@ -33,7 +33,7 @@ const contentSection: ContentWebsite = {
     },
   },
   engineeringProcess: {
-    title: 'Experience',
+    title: 'Engineering process',
     description: `All steps to build a competetive website`,
     data: {
       phases: [

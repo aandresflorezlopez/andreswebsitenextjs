@@ -36,11 +36,12 @@ import content from '../content';
  * loader = my name with svg animation
  * global use alias instead relative paths
  * dark mode
+ * CSS animations
  */
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div className="flex">
       <Header />
       {Object.keys(content).map((sectionKey: string, index: number) => (
         <Section
