@@ -23,6 +23,13 @@ import styles from '../styles/Home.module.css';
  *
  */
 
+/**
+ * TODO: General enhacements
+ * cursor = [squar]
+ * cursor:hover = [click-area]
+ * loader = my name with svg animation
+ */
+
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
