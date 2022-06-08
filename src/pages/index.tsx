@@ -19,6 +19,7 @@ import content from '../content';
  * unit testing
  * define fonts
  * add fonts
+ * define a colors scale
  * ! use SSR and SSG
  * ! mobile first
  * ? micro FE
@@ -34,6 +35,7 @@ import content from '../content';
  * cursor:hover = [click-area]
  * loader = my name with svg animation
  * global use alias instead relative paths
+ * dark mode
  */
 
 const Home: NextPage = () => {
