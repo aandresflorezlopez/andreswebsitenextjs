@@ -45,7 +45,7 @@ const contentSection: ContentWebsite = {
     },
   },
   contactMe: {
-    title: 'Experience',
+    title: 'Contact me (?)',
     description: `All steps to build a competetive website`,
     data: {
       information: [

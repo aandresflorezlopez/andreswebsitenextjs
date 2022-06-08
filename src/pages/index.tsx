@@ -17,6 +17,8 @@ import content from '../content';
  * make menu
  * create sections
  * unit testing
+ * define fonts
+ * add fonts
  * ! use SSR and SSG
  * ! mobile first
  * ? micro FE
@@ -41,6 +43,7 @@ const Home: NextPage = () => {
       {Object.keys(content).map((sectionKey: string, index: number) => (
         <Section
           key={`section${sectionKey}-${index}`}
+          id={sectionKey}
           title={content[sectionKey].title}
           description={content[sectionKey].description}
           body={content[sectionKey].data}

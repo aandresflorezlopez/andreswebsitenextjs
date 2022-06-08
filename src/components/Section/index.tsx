@@ -2,11 +2,12 @@ interface Props {
   title: string;
   description: string;
   body?: null | any;
+  id: string;
 }
 
-const Section = ({ title, body, description }: Props) => {
+const Section = ({ title, body, description, id }: Props) => {
   return (
-    <section>
+    <section id={id.toLocaleLowerCase()}>
       <h1>{title}</h1>
       <div>{description}</div>
     </section>
