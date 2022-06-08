@@ -1,13 +1,14 @@
 interface Props {
   title: string;
-  body: string;
+  description: string;
+  body?: null | any;
 }
 
-const Section = ({ title, body }: Props) => {
+const Section = ({ title, body, description }: Props) => {
   return (
     <section>
       <h1>{title}</h1>
-      <div>{body}</div>
+      <div>{description}</div>
     </section>
   );
 };
