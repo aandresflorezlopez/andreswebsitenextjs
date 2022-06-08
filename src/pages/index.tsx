@@ -41,7 +41,7 @@ import content from '../content';
 
 const Home: NextPage = () => {
   return (
-    <div className="flex">
+    <div className="">
       <Header />
       {Object.keys(content).map((sectionKey: string, index: number) => (
         <Section

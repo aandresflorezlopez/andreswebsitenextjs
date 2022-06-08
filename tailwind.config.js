@@ -9,6 +9,7 @@ module.exports = {
       'primary': {
         50: '#f8fafc',
         400: '#94a3b8',
+        900: '#0f172a',
       }
 
     },
