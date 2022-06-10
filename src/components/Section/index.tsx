@@ -10,9 +10,11 @@ interface Props {
 const Section = ({ title, body, description, id }: Props) => {
   const { t } = useTranslation();
   return (
-    <section id={id.toLocaleLowerCase()}>
-      <h1>{t(title)}</h1>
-      <h1>{t('hello')}</h1>
+    <section
+      id={id.toLocaleLowerCase()}
+      className="bg-primary-300 w-screen h-full p-10"
+    >
+      <h1 className="text-4xl mb-4">{t(title)}</h1>
       <div>{description}</div>
     </section>
   );

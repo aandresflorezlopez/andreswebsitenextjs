@@ -38,7 +38,7 @@ import content from '../content';
 
 const Home: NextPage = () => {
   return (
-    <div className="">
+    <div className="h-screen">
       <Header />
       {Object.keys(content).map((sectionKey: string, index: number) => (
         <Section

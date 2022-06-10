@@ -14,7 +14,7 @@ const NavBar = () => {
   }
 
   return (
-    <nav className="absolute w-full h-full bg-primary-400">
+    <nav className="w-full h-full bg-primary-400 fixed">
       <Burger isOpen={isMenuOpen} onClick={handleBurgerClick} />
       <ul className="h-full p-2 flex-column">
         {Object.keys(contentSection).map((section, index) => (
@@ -22,7 +22,10 @@ const NavBar = () => {
             key={`menu-${section}-link`}
             className="text-5xl font-bold justify-center flex mb-4"
           >
-            <a href={`#${section.toLocaleLowerCase()}`}>
+            <a
+              href={`#${section.toLocaleLowerCase()}`}
+              onClick={handleBurgerClick}
+            >
               {contentSection[section].title}
             </a>
           </li>
