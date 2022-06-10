@@ -22,6 +22,7 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
+      special: ['Special Elite']
     },
   },
   plugins: [],

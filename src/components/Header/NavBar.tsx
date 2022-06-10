@@ -20,7 +20,7 @@ const NavBar = () => {
         {Object.keys(contentSection).map((section, index) => (
           <li
             key={`menu-${section}-link`}
-            className="text-5xl font-bold justify-center flex mb-4"
+            className="text-5xl font-bold justify-center flex mb-4 font-special"
           >
             <a
               href={`#${section.toLocaleLowerCase()}`}
