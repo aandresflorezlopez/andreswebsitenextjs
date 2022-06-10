@@ -1,9 +1,3 @@
-/**
- * TODO: define section Interface
- * use i18n-next
- * validate if i18n is a dependency of i18n-next
- * create typescript file
- */
 interface Section {
   title: string;
   description: string;
@@ -17,7 +11,7 @@ interface ContentWebsite {
 const contentSection: ContentWebsite = {
   aboutMe: {
     title: 'About me',
-    description: `Hello everyone... \n I'm a software engineer that love beer, coding, beer and dream to become a DJ's some day`,
+    description: `hello EVERYONE... \n -- I'm a software engineer that love beer, coding, beer and dream to become a DJ's some day`,
     data: {},
   },
   myPassions: {

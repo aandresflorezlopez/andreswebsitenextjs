@@ -5,13 +5,17 @@ import Burger from './Burger';
 const NavBar = () => {
   const [isMenuOpen, toogleMenu] = useState(false);
 
+  const handleBurgerClick = () => {
+    toogleMenu(!isMenuOpen);
+  };
+
   if (!isMenuOpen) {
-    return <Burger variant="close" />;
+    return <Burger isOpen={isMenuOpen} onClick={handleBurgerClick} />;
   }
 
   return (
-    <nav className="absolute w-full h-full bg-primary-400 border-solid border-with border-8 border-primary-50">
-      <Burger variant="open" />
+    <nav className="absolute w-full h-full bg-primary-400">
+      <Burger isOpen={isMenuOpen} onClick={handleBurgerClick} />
       <ul className="h-full p-2 flex-column">
         {Object.keys(contentSection).map((section, index) => (
           <li

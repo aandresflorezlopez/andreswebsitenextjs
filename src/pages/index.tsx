@@ -5,28 +5,25 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Section from '../components/Section';
 
-import styles from '../styles/Home.module.css';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import content from '../content';
 
 /**
  * TODO: Mandatory changes
- * use content to build all sections
- * use i18n
- * support english and spanish (i18n)
- * make menu
  * create sections
  * unit testing
  * define fonts
  * add fonts
- * define a colors scale
+ * make menu animations
  * ! use SSR and SSG
  * ! mobile first
  * ? micro FE
  * ? design system
  * ? story book
  * ! API with laravel
- *
+ * TODO: Remove library
+ * ! remove i18n libraries
  */
 
 /**
@@ -56,5 +53,15 @@ const Home: NextPage = () => {
     </div>
   );
 };
+
+export async function getStaticProps({ locale }: { locale: any }) {
+  console.log(locale);
+  return {
+    props: {
+      ...(await serverSideTranslations('es', ['common'])),
+      // Will be passed to the page component as props
+    },
+  };
+}
 
 export default Home;
