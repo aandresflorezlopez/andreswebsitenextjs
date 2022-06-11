@@ -38,7 +38,7 @@ const Header = () => {
     >
       <motion.div className="background" variants={sidebar} />
       <MenuToggle toggle={() => toggleOpen()} />
-      <Navigation />
+      <Navigation toggle={() => toggleOpen()} />
     </motion.nav>
   );
 };

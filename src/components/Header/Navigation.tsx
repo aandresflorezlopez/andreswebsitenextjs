@@ -8,13 +8,19 @@ import contentSection from '../../content';
 const variants = {
   open: {
     opacity: 1,
+    display: 'block',
   },
   closed: {
     opacity: 0,
+    display: 'none',
   },
 };
 
-const NavBar = () => {
+interface MenuToggleProps {
+  toggle: () => void;
+}
+
+const NavBar = ({ toggle }: MenuToggleProps) => {
   return (
     <motion.ul
       variants={variants}
@@ -22,7 +28,7 @@ const NavBar = () => {
     >
       {Object.keys(contentSection).map((section, index) => (
         <MenuItem i={index} key={index}>
-          <a href={`#${section.toLocaleLowerCase()}`}>
+          <a href={`#${section.toLocaleLowerCase()}`} onClick={toggle}>
             {contentSection[section].title}
           </a>
         </MenuItem>
