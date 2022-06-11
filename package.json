@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "clsx": "^1.1.1",
+    "framer-motion": "^6.3.11",
     "i18n": "^0.15.0",
     "i18next": "^21.8.9",
     "next": "12.1.6",

@@ -10,11 +10,14 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import content from '../content';
 
 /**
+ *
+ * animation libraries for
+ * loader: https://react-move-docs.netlify.app/demos/animate
+ * frame transition and menu: https://www.framer.com/motion/
+ */
+
+/**
  * TODO: Mandatory changes
- * create sections
- * unit testing
- * define fonts
- * add fonts
  * make menu animations
  * ! use SSR and SSG
  * ! mobile first
@@ -24,6 +27,9 @@ import content from '../content';
  * ! API with laravel
  * TODO: Remove library
  * ! remove i18n libraries
+ *
+ * TODO: technical stuffs
+ * * unit testing
  */
 
 /**
@@ -47,6 +53,7 @@ const Home: NextPage = () => {
           title={content[sectionKey].title}
           description={content[sectionKey].description}
           body={content[sectionKey].data}
+          color={content[sectionKey].colorClass}
         />
       ))}
       <Footer />
@@ -55,11 +62,9 @@ const Home: NextPage = () => {
 };
 
 export async function getStaticProps({ locale }: { locale: any }) {
-  console.log(locale);
   return {
     props: {
-      ...(await serverSideTranslations('es', ['common'])),
-      // Will be passed to the page component as props
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   };
 }
