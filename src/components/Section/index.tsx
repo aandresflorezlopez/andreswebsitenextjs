@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { ParallaxLayer } from '@react-spring/parallax';
 
 interface Props {
   title: string;
@@ -8,28 +8,34 @@ interface Props {
   body?: null | any;
   id: string;
   color: string;
+  textColor: string;
+  index: number;
 }
 
-const variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-};
-
-const Section = ({ title, body, description, id, color }: Props) => {
+const Section = ({
+  title,
+  description,
+  id,
+  color,
+  textColor,
+  index,
+}: Props) => {
   const { t } = useTranslation();
-  const classes = clsx(`${color} w-screen h-full p-10`);
+
+  const classes = clsx(`${color} w-screen h-full p-16`);
   return (
-    <motion.section
-      initial="hidden"
-      animate="visible"
-      variants={variants}
-      transition={{ duration: 2 }}
-      id={id.toLocaleLowerCase()}
-      className={classes}
+    <ParallaxLayer
+      offset={index}
+      speed={2}
+      style={{ backgroundColor: '#ff6d6d' }}
+      className={`${color} p-20`}
     >
-      <h1 className="text-8xl mb-4 font-special">{t(title)}</h1>
-      <div>{description}</div>
-    </motion.section>
+      <p
+        className={`text-8xl mb-4 font-special justify-center items-center ${textColor}`}
+      >
+        {t(title)}
+      </p>
+    </ParallaxLayer>
   );
 };
 

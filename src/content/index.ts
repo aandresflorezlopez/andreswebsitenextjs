@@ -3,6 +3,7 @@ interface Section {
   description: string;
   data?: any;
   colorClass: string;
+  fontColor: string;
 }
 
 interface ContentWebsite {
@@ -12,9 +13,10 @@ interface ContentWebsite {
 const contentSection: ContentWebsite = {
   aboutMe: {
     title: 'About me',
-    description: `hello EVERYONE... \n -- I'm a software engineer that love beer, coding, beer and dream to become a DJ's some day`,
+    description: `Hello guys... \n -- I'm Andres Florez as engineer that love beer, coding, travel and dream to become a DJ's some day`,
     data: {},
     colorClass: 'bg-primary-100',
+    fontColor: 'text-primary-900',
   },
   myPassions: {
     title: 'My passions',
@@ -28,6 +30,7 @@ const contentSection: ContentWebsite = {
       ],
     },
     colorClass: 'bg-primary-400',
+    fontColor: 'text-primary-900',
   },
   engineeringProcess: {
     title: 'Engineering process',
@@ -41,6 +44,7 @@ const contentSection: ContentWebsite = {
       ],
     },
     colorClass: 'bg-primary-100',
+    fontColor: 'text-primary-900',
   },
   contactMe: {
     title: 'Contact me (?)',
@@ -52,6 +56,7 @@ const contentSection: ContentWebsite = {
       ],
     },
     colorClass: 'bg-primary-900',
+    fontColor: 'text-primary-100',
   },
 };
 

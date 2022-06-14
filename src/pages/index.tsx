@@ -1,12 +1,14 @@
 import type { NextPage } from 'next';
-import React from 'react';
+import React, { useRef } from 'react';
+import Image from 'next/image';
 
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Section from '../components/Section';
 
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax';
 
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import content from '../content';
 
 /**
@@ -17,6 +19,17 @@ import content from '../content';
  */
 
 /**
+ * TODO -- next steps
+ * check another font for body content
+ * create real content
+ * create parallax
+ * validate if framer or react-spring
+ * select the right color band
+ * select the right text color band
+ * responsive
+ * create section component
+ * publish
+ *
  * TODO: Mandatory changes
  * make menu animations
  * ! use SSR and SSG
@@ -24,7 +37,7 @@ import content from '../content';
  * ? micro FE
  * ? design system
  * ? story book
- * ! API with laravel
+ * ! API with laravel [ !!!!! ]
  * TODO: Remove library
  * ! remove i18n libraries
  *
@@ -42,21 +55,119 @@ import content from '../content';
  * CSS animations
  */
 
+// Little helpers ...
+const url = (name: string, wrap = false) =>
+  `${
+    wrap ? 'url(' : ''
+  }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
+    wrap ? ')' : ''
+  }`;
+
 const Home: NextPage = () => {
+  const parallax = useRef<IParallax>(null!);
   return (
-    <div className="h-screen">
-      <Header />
-      {Object.keys(content).map((sectionKey: string, index: number) => (
-        <Section
-          key={`section${sectionKey}-${index}`}
-          id={sectionKey}
-          title={content[sectionKey].title}
-          description={content[sectionKey].description}
-          body={content[sectionKey].data}
-          color={content[sectionKey].colorClass}
+    <div style={{ width: '100%', height: '100%', backgroundColor: 'red' }}>
+      <Parallax ref={parallax} pages={3}>
+        <ParallaxLayer
+          offset={0}
+          speed={1}
+          style={{ backgroundColor: '#87BCDE' }}
         />
-      ))}
-      <Footer />
+        <ParallaxLayer
+          offset={1}
+          speed={1}
+          style={{ backgroundColor: 'black' }}
+        />
+        <ParallaxLayer
+          offset={2}
+          speed={1}
+          style={{ backgroundColor: '#87BCDE' }}
+        />
+
+        <ParallaxLayer
+          offset={1.3}
+          speed={-0.3}
+          style={{ pointerEvents: 'none', backgroundColor: 'yellow' }}
+        >
+          <Image
+            alt="satellite4 "
+            src={url('satellite4')}
+            width={100}
+            height={100}
+            style={{ width: '15%', marginLeft: '70%', backgroundColor: 'red' }}
+          />
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          offset={2.5}
+          speed={-0.4}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            pointerEvents: 'none',
+            backgroundColor: 'blue',
+          }}
+        >
+          <Image
+            width={400}
+            height={400}
+            alt="earth"
+            src={url('earth')}
+            style={{ width: '60%' }}
+          />
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          offset={2}
+          speed={-0.3}
+          style={{
+            backgroundSize: '80%',
+            backgroundPosition: 'center',
+            backgroundImage: url('clients', true),
+            backgroundColor: 'green',
+          }}
+        />
+
+        <ParallaxLayer
+          offset={1}
+          speed={0.1}
+          onClick={() => parallax.current.scrollTo(2)}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Image
+            layout="fill"
+            alt="name"
+            src={url('bash')}
+            style={{ width: '40%' }}
+          />
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          offset={2}
+          speed={-0}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: 'greenyellow',
+          }}
+          onClick={() => parallax.current.scrollTo(0)}
+        >
+          <Image
+            layout="fill"
+            alt="name"
+            width={300}
+            height={200}
+            src={url('clients-main')}
+            style={{ width: '40%' }}
+          />
+        </ParallaxLayer>
+      </Parallax>
     </div>
   );
 };
