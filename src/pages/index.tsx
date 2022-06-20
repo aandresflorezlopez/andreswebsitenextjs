@@ -2,9 +2,7 @@ import type { NextPage } from 'next';
 import React, { useRef } from 'react';
 import Image from 'next/image';
 
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import Section from '../components/Section';
+import Terminal from '../components/Terminal';
 
 import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax';
 
@@ -20,6 +18,9 @@ import content from '../content';
 
 /**
  * TODO -- next steps
+ * study parallax
+ * * * create skelletun for main content
+ * * * create transitions between screens
  * check another font for body content
  * create real content
  * create parallax
@@ -66,109 +67,74 @@ const url = (name: string, wrap = false) =>
 const Home: NextPage = () => {
   const parallax = useRef<IParallax>(null!);
   return (
-    <div style={{ width: '100%', height: '100%', backgroundColor: 'red' }}>
-      <Parallax ref={parallax} pages={3}>
+    <Parallax
+      ref={parallax}
+      pages={1}
+      style={{
+        backgroundColor: 'black',
+        top: '0',
+        left: '0',
+      }}
+    >
+      <ParallaxLayer
+        offset={0}
+        speed={0}
+        factor={2}
+        style={{
+          backgroundImage: url('stars', true),
+          backgroundSize: 'cover',
+        }}
+      />
+      <>
         <ParallaxLayer
           offset={0}
-          speed={1}
-          style={{ backgroundColor: '#87BCDE' }}
-        />
+          speed={2}
+          style={{ display: 'flex', justifyContent: 'center' }}
+        >
+          <Terminal />
+        </ParallaxLayer>
         <ParallaxLayer
-          offset={1}
-          speed={1}
-          style={{ backgroundColor: 'black' }}
-        />
-        <ParallaxLayer
-          offset={2}
-          speed={1}
-          style={{ backgroundColor: '#87BCDE' }}
-        />
-
-        <ParallaxLayer
-          offset={1.3}
-          speed={-0.3}
-          style={{ pointerEvents: 'none', backgroundColor: 'yellow' }}
+          offset={0.3}
+          speed={0.3}
+          style={{ pointerEvents: 'none' }}
         >
           <Image
-            alt="satellite4 "
+            alt="satellite4"
             src={url('satellite4')}
-            width={100}
-            height={100}
-            style={{ width: '15%', marginLeft: '70%', backgroundColor: 'red' }}
+            width={50}
+            height={50}
           />
         </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={2.5}
-          speed={-0.4}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            pointerEvents: 'none',
-            backgroundColor: 'blue',
-          }}
-        >
-          <Image
-            width={400}
-            height={400}
-            alt="earth"
-            src={url('earth')}
-            style={{ width: '60%' }}
-          />
-        </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={2}
-          speed={-0.3}
-          style={{
-            backgroundSize: '80%',
-            backgroundPosition: 'center',
-            backgroundImage: url('clients', true),
-            backgroundColor: 'green',
-          }}
-        />
-
         <ParallaxLayer
           offset={1}
-          speed={0.1}
-          onClick={() => parallax.current.scrollTo(2)}
+          speed={0.3}
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            pointerEvents: 'none',
           }}
         >
           <Image
-            layout="fill"
-            alt="name"
-            src={url('bash')}
-            style={{ width: '40%' }}
+            alt="satellite4"
+            src={url('satellite4')}
+            width={50}
+            height={50}
           />
         </ParallaxLayer>
-
         <ParallaxLayer
-          offset={2}
-          speed={-0}
+          offset={0.8}
+          speed={0.3}
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: 'greenyellow',
+            pointerEvents: 'none',
           }}
-          onClick={() => parallax.current.scrollTo(0)}
         >
           <Image
-            layout="fill"
-            alt="name"
-            width={300}
-            height={200}
-            src={url('clients-main')}
-            style={{ width: '40%' }}
+            alt="satellite3"
+            src={url('satellite3')}
+            width={50}
+            height={50}
           />
         </ParallaxLayer>
-      </Parallax>
-    </div>
+      </>
+    </Parallax>
   );
 };
 

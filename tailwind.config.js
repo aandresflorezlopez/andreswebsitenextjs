@@ -1,3 +1,7 @@
+
+/**
+ * how to clasify colors outside of my main color list
+ */
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
@@ -18,11 +22,16 @@ module.exports = {
         800: '#1e293b',
         900: '#0f172a',
       },
+      green: '#02d402',
+      redMac: '#FF605C',
+      yellowMac: '#FFBD44',
+      greenMac: '#00CA4E',
 
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
-      special: ['Special Elite']
+      special: ['Special Elite'],
+      menlo: ['Menlo-Regular', 'Menlo']
     },
   },
   plugins: [],
