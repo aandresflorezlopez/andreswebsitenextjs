@@ -92,6 +92,9 @@ const Home: NextPage = () => {
           style={{ display: 'flex', justifyContent: 'center' }}
         >
           <Terminal />
+          <div className="absolute left-20 top-4 animate-bounce-slow">
+            <Image alt="img" src={url('satellite3')} width={40} height={40} />
+          </div>
           <div className="absolute left-5 bottom-4 animate-bounce-slow">
             <Image alt="img" src={url('satellite2')} width={70} height={70} />
           </div>
