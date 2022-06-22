@@ -6,6 +6,7 @@ import clsx from 'clsx';
 const description = ['Hello guys...'];
 
 // Menlo-Regular, Menlo, monospace
+// `Hello guys... \n -- I'm Andres Florez as engineer that love beer, coding, travel and dream to become a DJ's some day`,
 
 const Terminal = () => {
   return (
@@ -23,9 +24,24 @@ const Terminal = () => {
           id="terminal-buttons"
           className={clsx('flex flex-row w-2/12 justify-around p-4')}
         >
-          <div className={clsx('w-6 h-6 bg-redMac rounded-full flex')}></div>
-          <div className={clsx('w-6 h-6 bg-yellowMac rounded-full flex')}></div>
-          <div className={clsx('w-6 h-6 bg-greenMac rounded-full flex')}></div>
+          <div
+            className={clsx(
+              'w-4 h-4 text-primary-50 justify-center',
+              'lg:w-6 lg:h-6 bg-redMac rounded-full flex'
+            )}
+          />
+          <div
+            className={clsx(
+              'w-4 h-4',
+              'lg:w-6 lg:h-6 bg-yellowMac rounded-full flex'
+            )}
+          />
+          <div
+            className={clsx(
+              'w-4 h-4',
+              'lg:w-6 lg:h-6 bg-greenMac rounded-full flex'
+            )}
+          />
         </div>
         <div id="terminal-tabs" className="flex w-11/12">
           <div className="flex w-2/12 justify-center items-center pt-4 pb-4 text-primary-50 font-menlo border-b-2 border-solid">
@@ -34,27 +50,54 @@ const Terminal = () => {
         </div>
       </div>
       {/* terminal body */}
-      <div id="terminal-body" className="p-4 text-green font-menlo">
-        <p className="mb-2">
+      <div id="terminal-body" className="p-4 font-menlo overflow-auto">
+        <p className="mb-2 text-green">
           <span className="animate-pulse">&gt;</span> ~/Code/andresflorezlopez:
         </p>
-        <Typewriter
-          onInit={typewriter => {
-            typewriter
-              .typeString('<strong>You: </strong>')
-              .typeString('Hello, how are you?')
-              .pauseFor(2500)
-              .typeString('<br/>')
-              .typeString('<strong>Andres Florez: </strong>')
-              .typeString('I am fine thanks, how are you?')
-              .pauseFor(2500)
-              .typeString('<br/>')
-              .typeString('<strong>You: </strong> ')
-              .typeString('I am great!')
-              .pauseFor(2500)
-              .start();
-          }}
-        />
+        <div className="text-green">
+          <Typewriter
+            onInit={typewriter => {
+              typewriter
+                .typeString('Hello guys... ')
+                .pauseFor(1000)
+                .typeString('how r u?')
+                .pauseFor(2500)
+                .typeString('<br/>')
+                .typeString(
+                  `thanks for visitting my personal website that is still under construction.`
+                )
+                .typeString('<br/>')
+                .typeString('<br/>')
+                .pauseFor(2500)
+                .typeString(
+                  `So, I'm Andres Florez. I'm an engineer that love...`
+                )
+                .typeString('<br/>')
+                .pauseFor(2500)
+                .typeString(
+                  ` beer, coding, travel and dream to become a DJ some day`
+                )
+                .pauseFor(2500)
+                .typeString('<br/>')
+                .typeString('<br/>')
+                .typeString(
+                  'I have more than 10 years of experience in the tech industry'
+                )
+                .typeString('<br/>')
+                .typeString('<br/>')
+                .pauseFor(2500)
+                .typeString('I hope you enjoy your stay in my web site')
+                .start();
+            }}
+          />
+          <span className="text-redMac mt-4">
+            <br />
+            <br />
+            <br />
+            <br />
+            {'(warning): Error code 400 -- site under construction'}
+          </span>
+        </div>
       </div>
     </div>
   );

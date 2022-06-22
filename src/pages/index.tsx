@@ -92,46 +92,18 @@ const Home: NextPage = () => {
           style={{ display: 'flex', justifyContent: 'center' }}
         >
           <Terminal />
-        </ParallaxLayer>
-        <ParallaxLayer
-          offset={0.3}
-          speed={0.3}
-          style={{ pointerEvents: 'none' }}
-        >
-          <Image
-            alt="satellite4"
-            src={url('satellite4')}
-            width={50}
-            height={50}
-          />
-        </ParallaxLayer>
-        <ParallaxLayer
-          offset={1}
-          speed={0.3}
-          style={{
-            pointerEvents: 'none',
-          }}
-        >
-          <Image
-            alt="satellite4"
-            src={url('satellite4')}
-            width={50}
-            height={50}
-          />
-        </ParallaxLayer>
-        <ParallaxLayer
-          offset={0.8}
-          speed={0.3}
-          style={{
-            pointerEvents: 'none',
-          }}
-        >
-          <Image
-            alt="satellite3"
-            src={url('satellite3')}
-            width={50}
-            height={50}
-          />
+          <div className="absolute left-5 bottom-4 animate-bounce-slow">
+            <Image alt="img" src={url('satellite2')} width={70} height={70} />
+          </div>
+          <div className="absolute right-5 top-4 animate-bounce-slow">
+            <Image alt="img" src={url('satellite4')} width={70} height={70} />
+          </div>
+          <div className="absolute right-5 top-4 animate-bounce-slow opacity-20 -z-10">
+            <Image alt="img" src={url('cloud')} width={170} height={170} />
+          </div>
+          <div className="absolute left-5 bottom-10 animate-bounce-slow opacity-20 -z-10">
+            <Image alt="img" src={url('cloud')} width={170} height={170} />
+          </div>
         </ParallaxLayer>
       </>
     </Parallax>

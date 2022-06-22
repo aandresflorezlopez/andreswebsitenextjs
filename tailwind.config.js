@@ -33,6 +33,9 @@ module.exports = {
       special: ['Special Elite'],
       menlo: ['Menlo-Regular', 'Menlo']
     },
+    animation: {
+      'bounce-slow': 'bounce 5s linear infinite'
+    }
   },
   plugins: [],
 }
