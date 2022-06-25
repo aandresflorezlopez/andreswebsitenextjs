@@ -1,3 +1,5 @@
+@import url(//db.onlinewebfonts.com/c/9f94dc20bb2a09c15241d3a880b7ad01?family=Menlo);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -38,5 +40,3 @@ a {
 * {
   box-sizing: border-box;
 }
-
-@import url(//db.onlinewebfonts.com/c/9f94dc20bb2a09c15241d3a880b7ad01?family=Menlo);
